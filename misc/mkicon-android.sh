@@ -1,10 +1,18 @@
 #!/bin/bash
 CWD=$(pwd)
+CONV_BIN=$(which convert)
 
-if [[ -z $3 ]]; then
-	echo Missing base size parameter! Must be one of 18\|24\|36\|48
+if [[ -z $CONV_BIN ]]; then
+	echo ImageMagik convert is not installed
 	exit 1
 fi
+
+if [[ -z $3 ]]; then
+	echo Usage: mkicon-android SRC_FILE DST_NAME BASE_SIZE
+	exit 1
+fi
+
+NAME=`echo $2 | sed -e 's/-/_/g'`
 
 SIZE_MDPI=0
 SIZE_HDPI=0
@@ -50,8 +58,8 @@ if [[ $SIZE_MDPI -eq 0 ]]; then
 	exit 1
 fi
 
-convert $1 -resize ${SIZE_MDPI}x${SIZE_MDPI} -colorspace sRGB $CWD/${2}_${3}dp_mdpi.png
-convert $1 -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB $CWD/${2}_${3}dp_hdpi.png
-convert $1 -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB $CWD/${2}_${3}dp_xhdpi.png
-convert $1 -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB $CWD/${2}_${3}dp_xxhdpi.png
-convert $1 -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB $CWD/${2}_${3}dp_xxxhdpi.png
+convert $1 -resize ${SIZE_MDPI}x${SIZE_MDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_mdpi.png
+convert $1 -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_hdpi.png
+convert $1 -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xhdpi.png
+convert $1 -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xxhdpi.png
+convert $1 -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xxxhdpi.png
