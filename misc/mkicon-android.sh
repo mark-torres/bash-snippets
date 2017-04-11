@@ -8,7 +8,7 @@ if [[ -z $CONV_BIN ]]; then
 fi
 
 if [[ -z $3 ]]; then
-	echo Usage: mkicon-android SRC_FILE DST_NAME BASE_SIZE
+	echo Usage: $0 SRC_FILE DST_NAME BASE_SIZE
 	exit 1
 fi
 
