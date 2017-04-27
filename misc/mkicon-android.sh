@@ -53,13 +53,22 @@ if [[ $3 -eq 48 ]]; then
 	SIZE_XXXHDPI=192
 fi
 
+if [[ $3 -eq 512 ]]; then
+	SIZE_MDPI=512
+fi
+
 if [[ $SIZE_MDPI -eq 0 ]]; then
-	echo Wrong size! Must be one of 18\|24\|36\|48
+	echo Wrong size! Must be one of 18\|24\|36\|48\|512
 	exit 1
 fi
 
-convert $1 -resize ${SIZE_MDPI}x${SIZE_MDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_mdpi.png
-convert $1 -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_hdpi.png
-convert $1 -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xhdpi.png
-convert $1 -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xxhdpi.png
-convert $1 -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB $CWD/${NAME}_${3}dp_xxxhdpi.png
+if [[ $SIZE_MDPI -eq 512 ]]; then
+	convert "$1" -resize ${SIZE_MDPI}x${SIZE_MDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp.png"
+else
+	convert "$1" -resize ${SIZE_MDPI}x${SIZE_MDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_mdpi.png"
+	convert "$1" -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_hdpi.png"
+	convert "$1" -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xhdpi.png"
+	convert "$1" -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxhdpi.png"
+	convert "$1" -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxxhdpi.png"
+fi
+
