@@ -8,7 +8,7 @@ if [ -d "$HOME/Git" ] ; then
 fi
 
 # GENERIC UNIX
-alias ls="ls -lhF"
+alias ls="ls --color=auto -lhF"
 alias ping="ping -c 10 -i 2"
 alias go2up="cd ../.."
 alias go3up="cd ../../.."
@@ -24,3 +24,5 @@ alias adb="~/Library/Android/sdk/platform-tools/adb"
 alias cdsimdev="cd && cd Library/Developer/CoreSimulator/Devices/"
 alias xcode-DerivedData="cd ~/Library/Developer/Xcode/DerivedData"
 alias libarch-info="lipo -info"
+test -f ~/Library/Android/sdk/platform-tools/adb && alias adb="~/Library/Android/sdk/platform-tools/adb"
+test -d ~/Library/Developer/CoreSimulator/Devices && alias cdsimdev="cd ~/Library/Developer/CoreSimulator/Devices/"
