@@ -22,3 +22,5 @@ alias dateinfo="date +'%a %b %d %Y, %k:%Mhrs - Week:%U, Day:%j'"
 # MAC OS
 alias adb="~/Library/Android/sdk/platform-tools/adb"
 alias cdsimdev="cd && cd Library/Developer/CoreSimulator/Devices/"
+alias xcode-DerivedData="cd ~/Library/Developer/Xcode/DerivedData"
+alias libarch-info="lipo -info"

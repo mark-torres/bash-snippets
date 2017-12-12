@@ -18,6 +18,6 @@ SIZE_X1=$3
 let "SIZE_X2 = SIZE_X1 * 2"
 let "SIZE_X3 = SIZE_X1 * 3"
 
-convert $1 -resize ${SIZE_X1}x${SIZE_X1} -colorspace sRGB $CWD/${NAME}_${3}pt_1x.png
-convert $1 -resize ${SIZE_X2}x${SIZE_X2} -colorspace sRGB $CWD/${NAME}_${3}pt_2x.png
-convert $1 -resize ${SIZE_X3}x${SIZE_X3} -colorspace sRGB $CWD/${NAME}_${3}pt_3x.png
+convert $1 -resize ${SIZE_X1}x${SIZE_X1} -colorspace sRGB $CWD/${NAME}_${3}pt.png
+convert $1 -resize ${SIZE_X2}x${SIZE_X2} -colorspace sRGB $CWD/${NAME}_${3}pt@2x.png
+convert $1 -resize ${SIZE_X3}x${SIZE_X3} -colorspace sRGB $CWD/${NAME}_${3}pt@3x.png
