@@ -8,7 +8,7 @@ if [ -d "$HOME/Git" ] ; then
 fi
 
 # GENERIC UNIX
-alias ls="ls --color=auto -lhF"
+alias ls="ls -lhF"
 alias ping="ping -c 10 -i 2"
 alias go2up="cd ../.."
 alias go3up="cd ../../.."
