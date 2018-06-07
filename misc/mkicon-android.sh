@@ -36,6 +36,14 @@ if [[ $3 -eq 24 ]]; then
 	SIZE_XXHDPI=72
 	SIZE_XXXHDPI=96
 fi
+# 32 => 32, 48, 64, 96
+if [[ $3 -eq 32 ]]; then
+	SIZE_MDPI=32
+	SIZE_HDPI=48
+	SIZE_XHDPI=64
+	SIZE_XXHDPI=96
+	SIZE_XXXHDPI=144
+fi
 # 36 => 36, 54, 72, 108, 144
 if [[ $3 -eq 36 ]]; then
 	SIZE_MDPI=36
@@ -58,7 +66,7 @@ if [[ $3 -eq 512 ]]; then
 fi
 
 if [[ $SIZE_MDPI -eq 0 ]]; then
-	echo Wrong size! Must be one of 18\|24\|36\|48\|512
+	echo Wrong size! Must be one of 18\|24\|32\|36\|48\|512
 	exit 1
 fi
 
@@ -69,6 +77,6 @@ else
 	convert "$1" -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_hdpi.png"
 	convert "$1" -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xhdpi.png"
 	convert "$1" -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxhdpi.png"
-	convert "$1" -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxxhdpi.png"
+	#convert "$1" -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxxhdpi.png"
 fi
 
