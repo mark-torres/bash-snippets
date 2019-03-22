@@ -24,6 +24,6 @@ SIZE_X1=$( echo $3 | awk '{ print ($1 >= 0) ? $1 : 0 - $1}' )
 let "SIZE_X2 = SIZE_X1 * 2"
 let "SIZE_X3 = SIZE_X1 * 3"
 
-echo convert $1 -resize ${SIZE_X1}x${SIZE_X1} -colorspace sRGB $CWD/${NAME}_${3}pt.png
-echo convert $1 -resize ${SIZE_X2}x${SIZE_X2} -colorspace sRGB $CWD/${NAME}_${3}pt@2x.png
-echo convert $1 -resize ${SIZE_X3}x${SIZE_X3} -colorspace sRGB $CWD/${NAME}_${3}pt@3x.png
+convert $1 -resize ${SIZE_X1}x${SIZE_X1} -colorspace sRGB $CWD/${NAME}_${3}pt.png
+convert $1 -resize ${SIZE_X2}x${SIZE_X2} -colorspace sRGB $CWD/${NAME}_${3}pt@2x.png
+convert $1 -resize ${SIZE_X3}x${SIZE_X3} -colorspace sRGB $CWD/${NAME}_${3}pt@3x.png

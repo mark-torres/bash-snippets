@@ -4,3 +4,4 @@
 *.bak
 curl/*.html
 curl/*.txt
+gitignored
