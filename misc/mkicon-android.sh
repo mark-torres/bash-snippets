@@ -77,6 +77,6 @@ else
 	convert "$1" -resize ${SIZE_HDPI}x${SIZE_HDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_hdpi.png"
 	convert "$1" -resize ${SIZE_XHDPI}x${SIZE_XHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xhdpi.png"
 	convert "$1" -resize ${SIZE_XXHDPI}x${SIZE_XXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxhdpi.png"
-	#convert "$1" -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxxhdpi.png"
+	convert "$1" -resize ${SIZE_XXXHDPI}x${SIZE_XXXHDPI} -colorspace sRGB "$CWD/${NAME}_${3}dp_xxxhdpi.png"
 fi
 

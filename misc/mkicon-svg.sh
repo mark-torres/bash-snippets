@@ -29,4 +29,4 @@ fi
 
 NAME=`echo $2 | sed -e 's/-/_/g'`
 
-$CONV_BIN -density 1024 -background none -fill \'$NEW_COLOR\' -opaque $OLD_COLOR -fuzz 99% $1 ${NAME}.png
+$CONV_BIN -density 1024 -background none -fill \'$NEW_COLOR\' -opaque \'$OLD_COLOR\' -fuzz 99% $1 ${NAME}.png
