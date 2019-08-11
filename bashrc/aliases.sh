@@ -19,8 +19,8 @@ alias dartfiles="find . -type f -name '*.dart'"
 alias phpfiles="find . -type f -name '*.php'"
 alias nmapssl="sudo nmap --script ssl-cert,ssl-enum-ciphers -p 443"
 alias dateinfo="date +'%a %b %d %Y, %k:%Mhrs - Week:%U, Day:%j'"
-alias youtube-dl-m4a="youtube-dl -format 140"
-alias youtube-dl-ogg="youtube-dl -format 171"
+alias ytdl-m4a="youtube-dl -f 140"
+alias ytdl-ogg="youtube-dl -f 171"
 
 
 # MAC OS
